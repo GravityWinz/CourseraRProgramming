@@ -1,5 +1,4 @@
 complete <- function (directory, id = 1:332) {
-
 	
 	df <- data.frame(
 		id=integer(),
@@ -22,6 +21,7 @@ complete <- function (directory, id = 1:332) {
 	}
 
 	colnames(df) <- c("id","nobs")
+	
 	
 	df
 }
