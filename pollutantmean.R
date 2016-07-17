@@ -22,5 +22,13 @@ pollutantmean <- function (directory, pollutent, id = 1:332) {
 
   }
   
-  l
+  if (pollutent == "sulfate") {
+      colMeans(l["sulfate"] , na.rm="TRUE")
+  } else if  (pollutent == "nitrate") {
+      colMeans(l["nitrate"] , na.rm="TRUE")
+  }
+  else {
+    na
+  }
+  
 }
