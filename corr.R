@@ -2,12 +2,8 @@ corr <- function (directory, threshold = 0) {
 	
 	id <- 1:332
 	
-	df <- data.frame(
-		id=integer(),
-		nobs=integer(),
-		stringsAsFactors=FALSE) 
-	
-	
+	v <- vector(mode="numeric", length=0)
+
 	for (x in id)	{
 		
 		## thiink that there is a better way to do this
@@ -19,16 +15,13 @@ corr <- function (directory, threshold = 0) {
 		if ( nrow(dc) > threshold)
 		{
 
-			cor(dc["sulfate"],dc["nitrate"])
+			c <- cor(dc["sulfate"],dc["nitrate"])
+			
+			v <- append (v,c)
 		}
 
 				
 	}
-	
-	colnames(df) <- c("id","nobs")
-	
-	
-	df
+	v
 }
 	
-}
